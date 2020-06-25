@@ -39,7 +39,7 @@ int main()
 
 	for (int i = n - 1; i >= 1; i--) {
 
-		min = 3278; // will contains the max value of interger
+		min = INT_MAX; // will contains the max value of interger
 		for (int j = i + 1; j <= n; j++) {
 			//using Formula
 			if (graphs[i][j] != 0 && (graphs[i][j] + cost[j]) < min) {
@@ -52,7 +52,7 @@ int main()
 	// Finding the Optimal Solution '
 	path[0] = 0;
 	path[1] = 1; // first vertices / node
-	path[stages] = n; // 2nd vertice / node
+	path[stages] = n; // last vertice / node
 
 	for (int i = 2; i < stages; i++) {
 		path[i] = d[path[i - 1]];
